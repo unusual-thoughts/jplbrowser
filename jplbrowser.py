@@ -12,9 +12,10 @@ from httpx import AsyncClient
 url = "https://mars.nasa.gov/rss/api/"
 params = {
     "feed": "raw_images",
-    "category": "mars2020",
+    "category": "mars2020,ingenuity",
     "feedtype": "json",
     "order": "sol desc",
+    "ver": "1.2",
 }
 page_size = 100
 max_parallel = 16

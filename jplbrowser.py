@@ -80,7 +80,7 @@ def read_db():
 
 
 async def main():
-    async with AsyncClient() as client:
+    async with AsyncClient(timeout=10) as client:
         if (db := read_db()) is None:
             r = await client.get(url, params={**params, "num": 0})
             info = r.json()
